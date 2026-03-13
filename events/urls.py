@@ -14,3 +14,9 @@ urlpatterns = [
     path('events/<uuid:event_id>/delete/', views.delete_event),  # حذف حدث
     path('admin/', admin.site.urls),  # لوحة تحكم Admin
 ]
+from django.urls import path
+from .views import EventList
+
+urlpatterns = [
+    path('events/', EventList.as_view()),
+]

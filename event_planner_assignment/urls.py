@@ -14,3 +14,10 @@ urlpatterns = [
     path('events/<uuid:event_id>/delete/', views.delete_event),  # delete
     path('admin/', admin.site.urls),
 ]
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('api/', include('events.urls')),
+]
